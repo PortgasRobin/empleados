@@ -1,0 +1,102 @@
+<h1><i class="fa fa-users"></i> Empleados</h1>
+
+<hr>
+
+<div class="row">
+                Busqueda:
+                <br>
+                <input type="text" ng-model="busqueda.nombre" class="form-control" placeholder="Ingrese lo que desea buscar.">            
+                <br>
+
+                
+    
+
+            </div>
+
+<div class="row" align="right">
+	<a href="#/alumno/nuevo" class="btn btn-info"> 
+		<i class="fa fa-user-plus"></i> 
+		</a>
+		<!--button class="btn btn-info" ng-click="mas(alumno.codigo)"><i class="fa fa-info"></i></button-->
+	<br><br>
+</div>
+
+
+
+<div class="row" >
+	
+	<table class="table table-striped" >
+		
+	
+		<tr ng-repeat="alumno in alumnos | filter:busqueda | limitTo:posicion | limitTo:-5">
+			<td> <div class="panel-body" align="center">
+                            <img ng-src="img/{{ alumno.imagen }}" class="img-circle animated tada" alt="" width="100px" height="100px">
+
+                        </div> </td>
+			<td> <div class="panel-body">
+                            {{ alumno.nombre }} {{alumno.apellido}}
+                            <br>
+                            
+                            <strong>Edad:</strong> {{ alumno.edad }} años   
+                            <br>
+							<a href="#/alumno/{{ alumno.codigo }}" class="btn btn-info"> 
+							<i class="fa fa-pencil"></i> 
+							</a>
+							
+							
+							<a href="#" ng-click="delNom(alumno.codigo)" class="btn btn-info">
+							<i class="fa fa-trash-o"></i>	
+							</a>
+
+
+							<button class="btn btn-info" ng-click="mas(alumno.codigo)"><i class="fa fa-info-circle"></i></button>
+
+			<div class="row" ng-show="mostrarCaja">
+                
+                <div class="col-sm-9">
+                    <section class="panel">
+                        <div class="panel-body">
+                            
+                            Fecha de Nacimiento:
+                            {{ alumno.fechanacimiento }}
+                            <br>
+
+                            Sexo:
+                            {{ alumno.sexo }}
+                            <br>
+
+                            Nacionalidad:
+                            {{ alumno.nacionalidad }}
+							<br>
+							Descripcion:
+                            {{ alumno.descripcion }}
+
+                            <br>
+                            <button class="btn btn-danger" ng-click="cerrarperf()">Cancelar</button>
+
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+							
+                            
+                        </div> </td>
+		</tr>
+
+	</table>
+
+	<br>
+
+	<button class="btn btn-primary" ng-click="anteriores()">
+		<i class="fa fa-chevron-left"></i>
+		Anteriores
+	</button>
+	
+	<button class="btn btn-primary" ng-click="siguientes()">
+		Siguientes
+		<i class="fa fa-chevron-right"></i>
+	</button>
+
+
+</div>
