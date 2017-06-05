@@ -12,3 +12,12 @@ Cosas que se pueden mejorar en una siguiente version:
   * Controles en formularios
 
   * Fotos
+  
+  
+Para verlo en funcionamiento:
+-----------------------------
+  * Realizar un clone del repositorio, actualizar la baase de datos y ejecutar sobre un servidor WAMP.
+
+  * http://localhost/nombrerepositorio
+
+Saludos !
